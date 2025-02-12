@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Details</title>
+    <style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Header */
+.header {
+    width: 100%;
+    background: linear-gradient(to right, #E50914, #ff5722);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 10px rgba(255, 255, 255, 0.2);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: 0.3s ease-in-out;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+/* Page Body */
+body {
+    background: radial-gradient(circle, #181818, #0d0d0d);
+    color: white;
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Container */
+.container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 30px;
+    max-width: 900px;
+    width: 90%;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.container:hover {
+    transform: scale(1.02);
+}
+
+.container img {
+    width: 250px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2);
+}
+
+/* Movie Details */
+.movie-details {
+    flex: 1;
+    text-align: left;
+}
+
+.movie-details h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #ff9800;
+    text-shadow: 0px 2px 5px rgba(255, 152, 0, 0.5);
+}
+
+.movie-details p {
+    font-size: 16px;
+    color: #ddd;
+    margin-bottom: 8px;
+}
+
+/* Book Button */
+.book-btn {
+    padding: 12px 18px;
+    background: linear-gradient(to right, #ff9800, #ff5722);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: 0.3s;
+    box-shadow: 0px 4px 10px rgba(255, 152, 0, 0.5);
+}
+
+.book-btn:hover {
+    background: linear-gradient(to right, #ff5722, #ff9800);
+    transform: scale(1.1);
+    box-shadow: 0px 6px 12px rgba(255, 152, 0, 0.8);
+}
+
+/* Comments Section */
+.comments-section {
+    margin-top: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 12px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+    width: 90%;
+    max-width: 900px;
+}
+
+.comments-section h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #ff9800;
+}
+
+.comments-section .comment {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+    color: #ddd;
+    transition: transform 0.3s ease-in-out;
+}
+
+.comments-section .comment:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.2);
+}
+
+/* Comment Form */
+.comment-form {
+    margin-top: 20px;
+}
+
+.comment-form input[type="text"] {
+    width: 80%;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #ff9800;
+    border-radius: 8px;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.comment-form input[type="text"]::placeholder {
+    color: #ccc;
+}
+
+.comment-form input[type="submit"] {
+    padding: 12px 15px;
+    font-size: 16px;
+    background: linear-gradient(to right, #E50914, #ff5722);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: 0.3s;
+    box-shadow: 0px 4px 8px rgba(229, 9, 20, 0.6);
+}
+
+.comment-form input[type="submit"]:hover {
+    background: linear-gradient(to right, #ff5722, #E50914);
+    transform: scale(1.1);
+    box-shadow: 0px 6px 12px rgba(229, 9, 20, 0.8);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .container img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">🎬 MovieZone</div>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/view_movie">Movies</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div>
+        <div class="container">
+            <div>
+                <img src="<%= singleobj.image %>" alt="Movie Image">
+            </div>
+            <div class="movie-details">
+                <h2><%= singleobj.title %></h2>
+                <p><strong>Tagline:</strong> <%= singleobj.tagline %></p>
+                <p><strong>Genre:</strong> <%= singleobj.gener %></p>
+                <p><strong>Language:</strong> <%= singleobj.language %></p>
+                <p><strong>Price:</strong> <%= singleobj.price %></p>
+                <p><strong>Movie Date:</strong> <%= singleobj.moviedate %></p>
+                <p>2D,3D,ICE,4DX,4DX 3D,IMAX 2D,IMAX 3D</p>
+                <p><strong>Rating:</strong>⭐<%= singleobj.rating %></p>
+
+                <div class="comment-form">
+                    <form action="/insertcomment" method="post">
+                        <input type="text" placeholder="Enter your comment" name="comment">
+                        <input type="submit" value="Comment" style="margin-top: 10px;">
+                    </form>
+                </div>
+            </div>
+        </div>
+    
+        <div class="comments-section">
+            <h3>User Comments</h3>
+            <% commentView.map((v, i) => { %>
+                <div class="comment">
+                    <p><%= v.comment %></p>
+                    <span>Comment ID: <%= i + 1 %></span>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+
+</body>
+
+</html>
